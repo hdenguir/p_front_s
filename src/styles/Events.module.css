@@ -1,0 +1,22 @@
+.container {
+  background-color: #fff;
+  position: relative;
+  height: 100vh;
+}
+
+.event {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.eventItem {
+  border: 1px dashed #333;
+  background-color: #ccddbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2px;
+  width: 100%;
+  font-family: sans-serif;
+}
