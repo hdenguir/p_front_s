@@ -17,12 +17,19 @@ const Events = () => {
 
   const [eventsData, setEventsData] = useState([]);
 
-  useEffect(() => {
-    let eventsFormat = eventsFormatter(events, heightH, heightM);
+  useEffect(
+    () => {
+      function fetchEvents() {
+        let eventsFormat = eventsFormatter(events, heightH, heightM);
 
-    eventsFormat = getEventsWidth(eventsFormat);
-    setEventsData(getLeftPositions(eventsFormat));
-  }, []);
+        eventsFormat = getEventsWidth(eventsFormat);
+        setEventsData(getLeftPositions(eventsFormat));
+      }
+
+      fetchEvents();
+    },
+    [heightH, heightM]
+  );
 
   return (
     <div className={styles.container}>
